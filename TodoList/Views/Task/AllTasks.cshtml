@@ -4,6 +4,17 @@
     ViewBag.Title = "Tasks";
 }
 
+<style>
+    tr > td {
+        padding-bottom: 0.5em;
+    }
+
+    .popupDropDown {
+        width: 225px;
+        height: 34px;
+        border-radius: 4px;
+    }
+</style>
 <script type="text/javascript">
     var taskStatuses = '@Html.Raw(Json.Encode(Model.TaskStatuses))';
     var taskPriorities = '@Html.Raw(Json.Encode(Model.TaskPriorities))';
@@ -32,14 +43,15 @@
     <p class="alert alert-success" id="successMessage" style="display:none;"></p>
     <p class="alert alert-error" id="errorMessage" style="display:none;"></p>
     <p>
-        <a id="lnkCreateNew" href="#" data-ProjectId="@Model.Project.Id"
-           data-ProjectName="@Model.Project.Name" data-ProjectType="@Model.Project.Type">Create New</a>
+        <input type="button" id="lnkCreateNew" class="btn btn-success" value="Create New" data-ProjectId="@Model.Project.Id"
+           data-ProjectName="@Model.Project.Name" data-ProjectType="@Model.Project.Type" />
+        <input type="button" id="btnDeleteTasks" class="btn btn-danger" value="Delete selected tasks" />
     </p>
 
-    <input type="button" id="btnDeleteTasks" value="Delete selected tasks" />
+    
     @*@Html.DropDownListFor(model => model.Projects, Model.Projects)*@
     <table class="table">
-        <thead>
+        <thead style="background-color: gainsboro;">
             <tr>
                 <th></th>
                 <th>Name</th>
@@ -77,7 +89,7 @@
                     <td>
                         <a id="lnkEditTask" class="glyphicon glyphicon-pencil" href="#" data-ProjectId="@Model.Project.Id"
                            data-ProjectName="@Model.Project.Name" data-ProjectType="@Model.Project.Type" data-TaskId="@item.Id"></a>
-
+                        <span style="margin-left:18px;"></span>
                         <a id="lnkRemoveTask" class="glyphicon glyphicon-trash" href="#" data-ProjectType="@Model.Project.Type"
                            data-TaskId="@item.Id"></a>
                     </td>

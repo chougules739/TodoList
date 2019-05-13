@@ -4,8 +4,8 @@
         taskPriorities = JSON.parse(taskPriorities);
 
         $("#SaveTaskPopup").dialog({
-            height: 300,
-            width: 450,
+            height: 400,
+            width: 540,
             modal: true,
             resizable: true,
             dialogClass: 'no-close success-dialog',
@@ -27,9 +27,11 @@
 
                     tblHtml += '<hr />';
 
-                    tblHtml += '<div style="margin-left: 144px;">';
-                    tblHtml += '<input id="btnUpdate" type="submit" value="Update" />';
-                    tblHtml += '<input id="btnCancel" type="submit" value="Cancel" />';
+                    tblHtml += '<div style="margin-left: 129px;">';
+                    tblHtml += '<input class="btn btn-primary" id="btnUpdate" type="submit" value="Update" />';
+                    tblHtml += '<span style="margin-left: 16px;">';
+                    tblHtml += '</span>';
+                    tblHtml += '<input class="btn btn-default" id="btnCancel" type="submit" value="Cancel" />';
                     tblHtml += '</div>';
 
                     $("#SaveTaskPopup").html(tblHtml);
@@ -50,35 +52,35 @@
             var tblHtml = '<table>';
 
             tblHtml += '<tr><td>';
-            tblHtml += '<label id="lblName">Name</label>';
+            tblHtml += '<span id="lblName">Name</span>';
             tblHtml += '</td>';
 
             tblHtml += '<td>';
-            //tblHtml += '<input id="txtName" type="text" value="' + responce != null ? responce.Name : null + '" data-TaskId="' + taskId + '" >';
+            //tblHtml += '<input class="form-control" id="txtName" type="text" value="' + responce != null ? responce.Name : null + '" data-TaskId="' + taskId + '" >';
             if (responce != null)
-                tblHtml += '<input id="txtName" type="text" value="' + responce.Name + '" data-TaskId="' + taskId + '" />';
+                tblHtml += '<input class="form-control" id="txtName" type="text" value="' + responce.Name + '" data-TaskId="' + taskId + '" />';
             else
-                tblHtml += '<input id="txtName" type="text" value="" />';
+                tblHtml += '<input class="form-control" id="txtName" type="text" value="" />';
 
             tblHtml += '</td></tr>';
 
             tblHtml += '<tr><td>';
-            tblHtml += '<label id="lblDescription">Description</label>';
+            tblHtml += '<span id="lblDescription">Description</span>';
             tblHtml += '</td>';
 
             tblHtml += '<td>';
             if (responce != null)
-                tblHtml += '<input id="txtDescription" type="text" value="' + responce.Description + '" >';
+                tblHtml += '<input class="form-control" id="txtDescription" type="text" value="' + responce.Description + '" >';
             else
-                tblHtml += '<input id="txtDescription" type="text" value="" >';
+                tblHtml += '<input class="form-control" id="txtDescription" type="text" value="" >';
             tblHtml += '</td></tr>';
 
             tblHtml += '<tr><td>';
-            tblHtml += '<label id="lblStatus">Status</label>';
+            tblHtml += '<span id="lblStatus">Status</span>';
             tblHtml += '</td>';
 
             tblHtml += '<td>';
-            tblHtml += '<select id="ddlStatuses">';
+            tblHtml += '<select class="popupDropDown" class="popupDropDown" id="ddlStatuses">';
 
             tblHtml += '<option value="0">-- Select --</option>';
 
@@ -97,56 +99,56 @@
             tblHtml += '</td></tr>';
 
             tblHtml += '<tr><td>';
-            tblHtml += '<label id="lblProjectName">Project name</label>';
+            tblHtml += '<span id="lblProjectName">Project name</span>';
             tblHtml += '</td>';
 
             tblHtml += '<td>';
-            tblHtml += '<input id="txtProjectName" type="text" value="' + projectName +
+            tblHtml += '<input class="form-control" id="txtProjectName" type="text" value="' + projectName +
                 '" data-ProjectId="' + prjectId + '" data-ProjectType="' + projectType + '" disabled>';
             tblHtml += '</td></tr>';
 
             if (projectType == 1) {//Agile
                 tblHtml += '<tr><td>';
-                tblHtml += '<label id="lblEfforts">Efforts</label>';
+                tblHtml += '<span id="lblEfforts">Efforts</span>';
                 tblHtml += '</td>';
 
                 tblHtml += '<td>';
                 if (responce != null)
-                    tblHtml += '<input id="txtEfforts" type="text" value="' + responce.Efforts + '" >';
+                    tblHtml += '<input class="form-control" id="txtEfforts" type="text" value="' + responce.Efforts + '" >';
                 else
-                    tblHtml += '<input id="txtEfforts" type="text" value="" >';
+                    tblHtml += '<input class="form-control" id="txtEfforts" type="text" value="" >';
                 tblHtml += '</td></tr>';
 
                 tblHtml += '<tr><td>';
-                tblHtml += '<label id="lblStoryPoints">Story points</label>';
+                tblHtml += '<span id="lblStoryPoints">Story points</span>';
                 tblHtml += '</td>';
 
                 tblHtml += '<td>';
                 if (responce != null)
-                    tblHtml += '<input id="txtStoryPoints" type="text" value="' + responce.StoryPoints + '" >';
+                    tblHtml += '<input class="form-control" id="txtStoryPoints" type="text" value="' + responce.StoryPoints + '" >';
                 else
-                    tblHtml += '<input id="txtStoryPoints" type="text" value="" >';
+                    tblHtml += '<input class="form-control" id="txtStoryPoints" type="text" value="" >';
                 tblHtml += '</td></tr>';
 
                 tblHtml += '<tr><td>';
-                tblHtml += '<label id="lblBurnedHours">Burned hours</label>';
+                tblHtml += '<span id="lblBurnedHours">Burned hours</span>';
                 tblHtml += '</td>';
 
                 tblHtml += '<td>';
                 if (responce != null)
-                    tblHtml += '<input id="txtBurnedHours" type="text" value="' + responce.BurnedHours + '" >';
+                    tblHtml += '<input class="form-control" id="txtBurnedHours" type="text" value="' + responce.BurnedHours + '" >';
                 else
-                    tblHtml += '<input id="txtBurnedHours" type="text" value="" >';
+                    tblHtml += '<input class="form-control" id="txtBurnedHours" type="text" value="" >';
                 tblHtml += '</td></tr>';
             }
             else if (projectType == 2) {//Normal
                 tblHtml += '<tr><td>';
-                tblHtml += '<label id="lblPriority">Priority</label>';
+                tblHtml += '<span id="lblPriority">Priority</span>';
                 tblHtml += '</td>';
 
                 tblHtml += '<td>';
 
-                tblHtml += '<select id="ddlTaskPriorities">';
+                tblHtml += '<select class="popupDropDown" id="ddlTaskPriorities">';
 
                 tblHtml += '<option value="0">-- Select --</option>';
 
@@ -166,14 +168,14 @@
                 tblHtml += '</td></tr>';
 
                 tblHtml += '<tr><td>';
-                tblHtml += '<label id="lblEstimatedCompletionDate">Completion date</label>';
+                tblHtml += '<span id="lblEstimatedCompletionDate">Completion date</span>';
                 tblHtml += '</td>';
 
                 var estimatedDate = responce != null ? new Date(parseInt(responce.EstimatedCompletionDate.substr(6, 13))) : new Date();
                 var formattedDate = (estimatedDate.getMonth() + 1) + "/" + estimatedDate.getDate() + "/" +
                     estimatedDate.getFullYear();
                 tblHtml += '<td>';
-                tblHtml += '<input id="txtEstimatedCompletionDate" type="text" value="' + formattedDate + '" >';
+                tblHtml += '<input class="form-control" id="txtEstimatedCompletionDate" type="text" value="' + formattedDate + '" >';
                 tblHtml += '</td></tr>';
             }
             tblHtml += '</tr></table>';
@@ -275,6 +277,7 @@
             newRow += '<td>';
             newRow += '<a id="lnkEditTask" class="glyphicon glyphicon-pencil" href="#" data-ProjectId="' + prjectId + '"' +
                 'data-ProjectName="' + projectName + '" data-ProjectType="' + projectType + '" data-TaskId="' + responce.Id + '"></a>';
+            newRow += '<span style="margin-left:18px;"></span>';
             newRow += '<a id="lnkRemoveTask" class="glyphicon glyphicon-trash" href="#" data-ProjectType="' + projectType + '"' +
                 'data-TaskId="' + responce.Id + '"></a>';
             newRow += '</td>';
@@ -449,11 +452,13 @@
 
             tblHtml += '<hr />';
 
-            tblHtml += '<div style="margin-left: 144px;">';
-            tblHtml += '<input id="btnSubmit" type="submit" value="Submit" />';
-            tblHtml += '<input id="btnCancel" type="submit" value="Cancel" />';
+            tblHtml += '<div style="margin-left: 129px;">';
+            tblHtml += '<input class="btn btn-primary" id="btnSubmit" type="submit" value="Submit" />';
+            tblHtml += '<span style="margin-left: 16px;">';
+            tblHtml += '</span>';
+            tblHtml += '<input class="btn btn-default" id="btnCancel" type="submit" value="Cancel" />';
             tblHtml += '</div>';
-
+            
             $("#SaveTaskPopup").html(tblHtml);
             $('#txtEstimatedCompletionDate').datepicker();
             $("#SaveTaskPopup").dialog('open');
@@ -492,29 +497,31 @@
 
         $('#btnDeleteTasks').click(function () {
             var taskIds = new Array();
-            $('table tr td input[type="checkbox"]:checked').each(function () {
-                taskIds.push($(this).attr('data-taskid'))
-            });
-            $.ajax({
-                url: deleteTasks,
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                data: JSON.stringify({
-                    taskIds: taskIds
-                }),
-                success: function () {
-                    $('table tr td input[type="checkbox"]:checked').each(function () {                    
-                        $('table tr[data-TaskId="' + $(this).attr('data-taskid') + '"]').remove();
-                    });
+            if ($('table tr td input[type="checkbox"]:checked').length > 0) {
+                $('table tr td input[type="checkbox"]:checked').each(function () {
+                    taskIds.push($(this).attr('data-taskid'))
+                });
+                $.ajax({
+                    url: deleteTasks,
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify({
+                        taskIds: taskIds
+                    }),
+                    success: function () {
+                        $('table tr td input[type="checkbox"]:checked').each(function () {
+                            $('table tr[data-TaskId="' + $(this).attr('data-taskid') + '"]').remove();
+                        });
 
-                    $('#successMessage').css('display', 'block');
-                    $('#successMessage').html('Task(s) deleted successfully.');
-                },
-                error: function (ex) {
-                    $('#errorMessage').css('display', 'block');
-                    $('#errorMessage').html('Error while processing data.');
-                }
-            });
+                        $('#successMessage').css('display', 'block');
+                        $('#successMessage').html('Task(s) deleted successfully.');
+                    },
+                    error: function (ex) {
+                        $('#errorMessage').css('display', 'block');
+                        $('#errorMessage').html('Error while processing data.');
+                    }
+                });
+            }
         });
     });
 });
