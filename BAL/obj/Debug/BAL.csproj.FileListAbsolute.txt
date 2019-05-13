@@ -1,0 +1,16 @@
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\bin\Debug\BAL.dll
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\bin\Debug\BAL.pdb
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\bin\Debug\ServiceStack.Common.dll
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\bin\Debug\ServiceStack.dll
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\bin\Debug\ServiceStack.Interfaces.dll
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\bin\Debug\ServiceStack.OrmLite.dll
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\bin\Debug\ServiceStack.OrmLite.SqlServer.dll
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\bin\Debug\ServiceStack.Redis.dll
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\bin\Debug\ServiceStack.ServiceInterface.dll
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\bin\Debug\ServiceStack.Text.dll
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\obj\Debug\BAL.csproj.CoreCompileInputs.cache
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\obj\Debug\BAL.csproj.CopyComplete
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\obj\Debug\BAL.dll
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\obj\Debug\BAL.pdb
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\bin\Debug\BAL.dll.config
+D:\MS in Cloud\Task\Deloitte\TodoList\BAL\obj\Debug\BAL.csprojAssemblyReference.cache

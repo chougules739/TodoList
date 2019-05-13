@@ -1,0 +1,84 @@
+﻿@model TodoList.Models.ToDoTaskComplexType
+
+@{
+    ViewBag.Title = "Tasks";
+}
+
+<script type="text/javascript">
+    var taskStatuses = '@Html.Raw(Json.Encode(Model.TaskStatuses))';
+    var taskPriorities = '@Html.Raw(Json.Encode(Model.TaskPriorities))';
+    var projectType= '@Model.Project.Type';
+    var prjectId = '@Model.Project.Id';
+    var projectName = '@Model.Project.Name';
+</script>
+
+@Styles.Render("~/bundles/bootstrapCSS")
+@Scripts.Render("~/bundles/bootstrapJS")
+
+
+@Styles.Render("~/bundles/jqueryUiCSS")
+@Scripts.Render("~/bundles/jqueryUiJS")
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <br />
+    <p class="alert alert-success" id="successMessage" style="display:none;"></p>
+    <p class="alert alert-error" id="errorMessage" style="display:none;"></p>
+    <p>
+        <a id="lnkCreateNew" href="#" data-ProjectId="@Model.Project.Id"
+           data-ProjectName="@Model.Project.Name" data-ProjectType="@Model.Project.Type">Create New</a>
+    </p>
+
+    <input type="button" id="btnDeleteTasks" value="Delete selected tasks" />
+    @*@Html.DropDownListFor(model => model.Projects, Model.Projects)*@
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Project Name</th>
+                <th>Status</th>
+                <th>Last modified</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.TodoTasks)
+            {
+                <tr data-TaskId="@item.Id">
+                    <td>
+                        <input type="checkbox" id="chkTask" data-TaskId="@item.Id" />
+                    </td>
+                    <td>
+                        @Html.Label(item.Name)
+                    </td>
+                    <td>
+                        @Html.Label(item.Description)
+                    </td>
+                    <td>
+                        @Html.Label(Model.Project.Name)
+                    </td>
+                    <td>
+                        @Html.Label("Status", item.Status == (int)BAL.TaskStatus.ToDo ? "ToDo" :
+                 item.Status == (int)BAL.TaskStatus.InProgress ? "In-Progress" : "Completed",
+                 new { data_Status = item.Status.ToString() })
+                    </td>
+                    <td>
+                        @Html.Label(item.UpdatedDate == DateTime.MinValue ? item.CreatedDate.ToShortDateString() : item.UpdatedDate.ToShortDateString())
+                    </td>
+                    <td>
+                        <a id="lnkEditTask" class="glyphicon glyphicon-pencil" href="#" data-ProjectId="@Model.Project.Id"
+                           data-ProjectName="@Model.Project.Name" data-ProjectType="@Model.Project.Type" data-TaskId="@item.Id"></a>
+
+                        <a id="lnkRemoveTask" class="glyphicon glyphicon-trash" href="#" data-ProjectType="@Model.Project.Type"
+                           data-TaskId="@item.Id"></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div id="SaveTaskPopup" title="Task details"></div>
+}
