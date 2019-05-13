@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoList", "TodoList\TodoLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL", "BAL\BAL.csproj", "{6BF92274-5520-4896-86D7-8B80B64748D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoUT", "ToDoUT\ToDoUT.csproj", "{99797595-AEFF-4B3A-A986-0E4CDFF42280}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6BF92274-5520-4896-86D7-8B80B64748D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BF92274-5520-4896-86D7-8B80B64748D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BF92274-5520-4896-86D7-8B80B64748D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99797595-AEFF-4B3A-A986-0E4CDFF42280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99797595-AEFF-4B3A-A986-0E4CDFF42280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99797595-AEFF-4B3A-A986-0E4CDFF42280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99797595-AEFF-4B3A-A986-0E4CDFF42280}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

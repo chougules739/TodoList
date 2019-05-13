@@ -16,13 +16,15 @@ namespace TodoList.Controllers
         //[Authorize(Roles = "Manager, Developer, Tester")]
         public ActionResult AllTasks()
         {
-            //SaveProject("localhost");
-            //IEnumerable<Project> result = GetProjects("localhost", "AllDataKlein");
+            ProjectManager _projectManager = new ProjectManager();
+            
+            //To populate hard caded project data
+            //_projectManager.SaveProject();
 
             ToDoTaskComplexType _toDoTaskComplexType = new ToDoTaskComplexType();
             
             //Loads normal/waterfall model's project only.
-            _toDoTaskComplexType.Project = ProjectManager.GetProjects().Where(x => x.Type == (int)ProjectType.Normal).FirstOrDefault();
+            _toDoTaskComplexType.Project = _projectManager.GetProjects().Where(x => x.Type == (int)ProjectType.Normal).FirstOrDefault();
 
             ToDoTask _toDoTask = new ToDoTask();
 
@@ -64,10 +66,9 @@ namespace TodoList.Controllers
             todoTaskModel.Id = Guid.NewGuid();
             todoTaskModel.IsActive = true;
             todoTaskModel.CreatedDate = DateTime.Now;
-
-            //Need to change
-            todoTaskModel.CreatedBy = new Guid();
-            todoTaskModel.UserId = new Guid();
+            
+            todoTaskModel.CreatedBy = ((Models.User)Session["User"]).Id;
+            todoTaskModel.UserId = ((Models.User)Session["User"]).Id;
 
             ToDoTask toDoTask = new ToDoTask();
 
@@ -87,8 +88,8 @@ namespace TodoList.Controllers
             todoTaskModel.UpdatedDate = DateTime.Now;
 
             //Need to change
-            todoTaskModel.UpdatedBy = new Guid();
-            todoTaskModel.UserId = new Guid();
+            todoTaskModel.UpdatedBy = ((Models.User)Session["User"]).Id;
+            todoTaskModel.UserId = ((Models.User)Session["User"]).Id;
 
             ToDoTask toDoTask = new ToDoTask();
 
@@ -129,55 +130,5 @@ namespace TodoList.Controllers
                 new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Bad Request");
         }
         
-        /// <summary>  
-        /// To Save Key Value Pair in Redis DB  
-        /// </summary>  
-        /// <param name="host">Redis Host Name</param>  
-        /// <param name="key">Key as string</param>  
-        /// <param name="value">Value as string</param>  
-        /// <returns></returns>  
-        private void SaveProject(string host)
-        {
-            using (var objRedisClient = new RedisClient(host))
-            {
-                try
-                {
-                    IRedisTypedClient<Project> projectList = objRedisClient.As<Project>();
-
-                    List<Project> project = new List<Project>();
-                    project.Add(new Project { Id = Guid.NewGuid(), Type = 1, Name = "Proj 1", IsActive = true });
-                    project.Add(new Project { Id = Guid.NewGuid(), Type = 2, Name = "Proj 2", IsActive = true });
-
-                    projectList.DeleteAll();
-                    projectList.StoreAll(project);
-                }
-                catch (Exception ex)
-                {
-                    string s = ex.Message.ToString();
-                }
-            }
-        }
-        
-        /// <summary>  
-        /// To get value from Redis DB  
-        /// </summary>  
-        /// <param name="host">Redis Host Name</param>  
-        /// <param name="key">Key as string</param>  
-        /// <returns></returns>  
-        private static IEnumerable<Project> GetProjects(string host, string key)
-        {
-            using (var objRedisClient = new RedisClient(host))
-            {
-                IRedisTypedClient<Project> projects = objRedisClient.As<Project>();
-                return projects.GetAll();
-                //Project p = projects.GetAll().FirstOrDefault();
-                //IList<Project> p = (IList<Project>)projects.GetAll().SingleOrDefault();
-
-                //var query2 = (from element in projects.GetAll()
-                //              select element).FirstOrDefault();
-                //Console.WriteLine(query2.FirstOrDefault());
-
-            }
-        }
     }
 }
