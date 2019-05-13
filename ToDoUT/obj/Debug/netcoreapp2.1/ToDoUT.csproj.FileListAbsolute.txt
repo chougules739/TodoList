@@ -7,9 +7,6 @@ D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\bin\Debug\netcoreapp2.1\ToDoUT.runt
 D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\bin\Debug\netcoreapp2.1\ToDoUT.runtimeconfig.dev.json
 D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\bin\Debug\netcoreapp2.1\ToDoUT.dll
 D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\bin\Debug\netcoreapp2.1\BAL.dll
-D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\bin\Debug\netcoreapp2.1\ServiceStack.Redis.dll
-D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\bin\Debug\netcoreapp2.1\ServiceStack.Interfaces.dll
-D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\bin\Debug\netcoreapp2.1\ServiceStack.Text.dll
 D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\bin\Debug\netcoreapp2.1\BAL.pdb
 D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\bin\Debug\netcoreapp2.1\BAL.dll.config
 D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\obj\Debug\netcoreapp2.1\ToDoUT.csprojAssemblyReference.cache
@@ -17,3 +14,7 @@ D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\obj\Debug\netcoreapp2.1\ToDoUT.cspr
 D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\obj\Debug\netcoreapp2.1\ToDoUT.AssemblyInfoInputs.cache
 D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\obj\Debug\netcoreapp2.1\ToDoUT.AssemblyInfo.cs
 D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\obj\Debug\netcoreapp2.1\ToDoUT.csproj.CopyComplete
+D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\bin\Debug\netcoreapp2.1\ToDoUT.dll.config
+D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\bin\Debug\netcoreapp2.1\ToDoUT.pdb
+D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\obj\Debug\netcoreapp2.1\ToDoUT.dll
+D:\MS in Cloud\Task\Deloitte\TodoList\ToDoUT\obj\Debug\netcoreapp2.1\ToDoUT.pdb

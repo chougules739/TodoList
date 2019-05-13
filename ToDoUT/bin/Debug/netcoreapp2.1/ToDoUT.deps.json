@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "2914bdf5329141fa92e1afb858a62e1c7edf8dce"
+    "signature": "e204f8be4dfea8710ecaa47762216ab917062099"
   },
   "compilationOptions": {},
   "targets": {
@@ -10,6 +10,7 @@
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "15.8.0",
           "NUnit3TestAdapter": "3.10.0",
+          "ServiceStack.Redis.Complete": "1.0.0",
           "NUnit": "3.10.1",
           "BAL": "1.0.0.0"
         },
@@ -437,6 +438,42 @@
         }
       },
       "runtime.native.System/4.3.0": {},
+      "ServiceStack.Redis.Complete/1.0.0": {
+        "runtime": {
+          "lib/net35/ServiceStack.Common.dll": {
+            "assemblyVersion": "1.0.4333.5581",
+            "fileVersion": "1.0.4333.5581"
+          },
+          "lib/net35/ServiceStack.Interfaces.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/net35/ServiceStack.OrmLite.SqlServer.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/net35/ServiceStack.OrmLite.dll": {
+            "assemblyVersion": "3.0.3.5599",
+            "fileVersion": "3.0.3.5599"
+          },
+          "lib/net35/ServiceStack.Redis.dll": {
+            "assemblyVersion": "3.9.71.0",
+            "fileVersion": "3.9.71.0"
+          },
+          "lib/net35/ServiceStack.ServiceInterface.dll": {
+            "assemblyVersion": "3.9.71.0",
+            "fileVersion": "3.9.71.0"
+          },
+          "lib/net35/ServiceStack.Text.dll": {
+            "assemblyVersion": "3.9.71.0",
+            "fileVersion": "3.9.71.0"
+          },
+          "lib/net35/ServiceStack.dll": {
+            "assemblyVersion": "3.9.71.0",
+            "fileVersion": "3.9.71.0"
+          }
+        }
+      },
       "System.AppContext/4.1.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -1039,30 +1076,6 @@
             "fileVersion": "1.0.0.0"
           }
         }
-      },
-      "ServiceStack.Redis/3.9.71.0": {
-        "runtime": {
-          "ServiceStack.Redis.dll": {
-            "assemblyVersion": "3.9.71.0",
-            "fileVersion": "3.9.71.0"
-          }
-        }
-      },
-      "ServiceStack.Interfaces/1.0.0.0": {
-        "runtime": {
-          "ServiceStack.Interfaces.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "ServiceStack.Text/3.9.71.0": {
-        "runtime": {
-          "ServiceStack.Text.dll": {
-            "assemblyVersion": "3.9.71.0",
-            "fileVersion": "3.9.71.0"
-          }
-        }
       }
     }
   },
@@ -1169,6 +1182,13 @@
       "sha512": "sha512-c/qWt2LieNZIj1jGnVNsE2Kl23Ya2aSTBuXMD6V7k9KWr6l16Tqdwq+hJScEpWER9753NWC8h96PaVNY5Ld7Jw==",
       "path": "runtime.native.system/4.3.0",
       "hashPath": "runtime.native.system.4.3.0.nupkg.sha512"
+    },
+    "ServiceStack.Redis.Complete/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-N3Ni4UlSsObT/242ROxgBguJ9ggEdajwfVIHrXXrul3PszqFJyhyZMc77FNyWasCVSx5an91l7CIGnVH4G8JCA==",
+      "path": "servicestack.redis.complete/1.0.0",
+      "hashPath": "servicestack.redis.complete.1.0.0.nupkg.sha512"
     },
     "System.AppContext/4.1.0": {
       "type": "package",
@@ -1570,21 +1590,6 @@
       "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
     },
     "BAL/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "ServiceStack.Redis/3.9.71.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "ServiceStack.Interfaces/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "ServiceStack.Text/3.9.71.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
