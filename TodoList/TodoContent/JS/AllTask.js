@@ -15,7 +15,7 @@
         $(document).on("click", "table tr td #lnkEditTask", function () {
             var taskId = $(this).attr('data-taskid');
             $.ajax({
-                url: 'PopulateTask',
+                url: populateTaskUrl,
                 data: {
                     projectType: projectType,
                     prjectId: prjectId,
@@ -206,7 +206,7 @@
                 };
 
                 $.ajax({
-                    url: 'UpdateNormalTask',
+                    url: updateNormalTask,
                     type: "POST",
                     dataType: "json",
                     contentType: "application/json; charset=utf-8",
@@ -303,7 +303,7 @@
                 };
 
                 $.ajax({
-                    url: 'InsertNormalTask',
+                    url: insertNormalTask,
                     type: "POST",
                     dataType: "json",
                     contentType: "application/json; charset=utf-8",
@@ -464,7 +464,7 @@
             var del = confirm("Do you want to delete this record?");
             if (del == true) {
                 $.ajax({
-                    url: 'DeleteNormalTask',
+                    url: deleteNormalTask,
                     type: "POST",
                     contentType: "application/json; charset=utf-8",
                     data: JSON.stringify({
@@ -496,7 +496,7 @@
                 taskIds.push($(this).attr('data-taskid'))
             });
             $.ajax({
-                url: 'DeleteTasks',
+                url: deleteTasks,
                 type: "POST",
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify({

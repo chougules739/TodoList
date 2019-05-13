@@ -17,12 +17,12 @@ namespace TodoList.Controllers
         public ActionResult AllTasks()
         {
             ProjectManager _projectManager = new ProjectManager();
-            
+
             //To populate hard caded project data
             //_projectManager.SaveProject();
 
             ToDoTaskComplexType _toDoTaskComplexType = new ToDoTaskComplexType();
-            
+
             //Loads normal/waterfall model's project only.
             _toDoTaskComplexType.Project = _projectManager.GetProjects().Where(x => x.Type == (int)ProjectType.Normal).FirstOrDefault();
 
@@ -33,7 +33,7 @@ namespace TodoList.Controllers
             else if (_toDoTaskComplexType.Project.Type == (int)ProjectType.Normal)
                 _toDoTask.SetToDoTaskStrategy(new NormalTask());
 
-            _toDoTaskComplexType.TodoTasks = _toDoTask.GetAll(_toDoTaskComplexType.Project.Id);
+            _toDoTaskComplexType.TodoTasks = _toDoTask.GetAll(_toDoTaskComplexType.Project.Id).Where(x => x.UserId == ((Models.User)Session["User"]).Id);
 
             _toDoTaskComplexType.TaskStatuses = from TaskStatus status in Enum.GetValues(typeof(TaskStatus))
                                                 select new SelectListItem { Value = Convert.ToInt32(status).ToString(), Text = status.ToString() };
@@ -66,7 +66,7 @@ namespace TodoList.Controllers
             todoTaskModel.Id = Guid.NewGuid();
             todoTaskModel.IsActive = true;
             todoTaskModel.CreatedDate = DateTime.Now;
-            
+
             todoTaskModel.CreatedBy = ((Models.User)Session["User"]).Id;
             todoTaskModel.UserId = ((Models.User)Session["User"]).Id;
 
@@ -129,6 +129,6 @@ namespace TodoList.Controllers
             return _normalTodoTaskModels.Count() == 0 ? new HttpStatusCodeResult(HttpStatusCode.OK, "Record deleted") :
                 new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Bad Request");
         }
-        
+
     }
 }

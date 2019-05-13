@@ -113,7 +113,7 @@ namespace Tests
             List<Guid> storedIds = new List<Guid>() { new Guid("a444b67a-85ad-480a-8dc8-577155587356"), new Guid("b444b67b-85ad-480a-8dc8-577155587356") };
             IEnumerable<TodoTaskModel> _agileTodoTaskModel = _toDoTask.DeleteByIds(storedIds);
 
-            Assert.AreEqual(0, _agileTodoTaskModel.Count());
+            Assert.AreEqual(0, _agileTodoTaskModel);
         }
 
         [Test]
