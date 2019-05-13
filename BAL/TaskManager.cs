@@ -3,6 +3,7 @@ using ServiceStack.Redis.Generic;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 
 namespace BAL
@@ -349,9 +350,10 @@ namespace BAL
     /// </summary>
     public class Logger : ILogger
     {
+        string _logPath = ConfigurationManager.AppSettings["LogFilePath"].ToString();
         public void LogInfo(string message)
         {
-            //Log message logic
+            File.AppendAllText(_logPath + "_" + DateTime.Now.ToString("dd-MM-yyyy") + ".txt", message);
         }
     }
 }

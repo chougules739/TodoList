@@ -13,4 +13,3 @@ D:\MS in Cloud\Task\Deloitte\TodoList\BAL\obj\Debug\BAL.csproj.CopyComplete
 D:\MS in Cloud\Task\Deloitte\TodoList\BAL\obj\Debug\BAL.dll
 D:\MS in Cloud\Task\Deloitte\TodoList\BAL\obj\Debug\BAL.pdb
 D:\MS in Cloud\Task\Deloitte\TodoList\BAL\bin\Debug\BAL.dll.config
-D:\MS in Cloud\Task\Deloitte\TodoList\BAL\obj\Debug\BAL.csprojAssemblyReference.cache
